@@ -1,3 +1,38 @@
 1、统一调用接口
 2、统一设置回调接口
 3、
+
+
+RestartComputer  重启计算机
+SendHttpGet  发送HTTPget 操作
+SendHttpPost  发送HTTP post 操作
+ShutdownComputer 关闭计算机
+Download 下载指定url
+StopNet  关闭网络
+Snap   截图
+GetPixel  获取指定位置颜色
+LeftMouseClick  鼠标左键点击
+LeftMouseDClick 鼠标左键双击
+MoveMouse  移动鼠标到指定位置
+PressKey 按键
+Excute 执行外部命令
+AbortProgram 异常终止程序
+WaitTime  等待时间点到达
+SendMail 发送邮件
+ComCommand 发送串口指令
+SocketCommand 发送套接字指令
+
+
+UIItem   可供使用的UI
+    UIH5Form  展示H5的Form程序
+
+
+
+
+
+
+
+
+while 循环
+for
+if
