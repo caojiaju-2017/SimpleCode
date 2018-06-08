@@ -1,0 +1,8 @@
+C:\Users\53436\Downloads\MomoForm-master\MomoForm-master\MomoForm\Momo.AutoUpgrade.Core\bin\Debug\Momo.AutoUpgrade.Core.dll
+C:\Users\53436\Downloads\MomoForm-master\MomoForm-master\MomoForm\Momo.AutoUpgrade.Core\bin\Debug\Momo.AutoUpgrade.Core.pdb
+C:\Users\53436\Downloads\MomoForm-master\MomoForm-master\MomoForm\Momo.AutoUpgrade.Core\obj\Debug\Momo.AutoUpgrade.Core.dll
+C:\Users\53436\Downloads\MomoForm-master\MomoForm-master\MomoForm\Momo.AutoUpgrade.Core\obj\Debug\Momo.AutoUpgrade.Core.pdb
+D:\Soft\BYAdPlatform\4.Code\BYBrowser\MomoForm\Momo.AutoUpgrade.Core\bin\Debug\Momo.AutoUpgrade.Core.dll
+D:\Soft\BYAdPlatform\4.Code\BYBrowser\MomoForm\Momo.AutoUpgrade.Core\bin\Debug\Momo.AutoUpgrade.Core.pdb
+D:\Soft\BYAdPlatform\4.Code\BYBrowser\MomoForm\Momo.AutoUpgrade.Core\obj\Debug\Momo.AutoUpgrade.Core.dll
+D:\Soft\BYAdPlatform\4.Code\BYBrowser\MomoForm\Momo.AutoUpgrade.Core\obj\Debug\Momo.AutoUpgrade.Core.pdb

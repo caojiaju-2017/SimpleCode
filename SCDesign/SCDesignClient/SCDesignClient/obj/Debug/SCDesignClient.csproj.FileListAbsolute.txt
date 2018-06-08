@@ -1,0 +1,11 @@
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\bin\Debug\SCDesignClient.exe.config
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\bin\Debug\SCDesignClient.exe
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\bin\Debug\SCDesignClient.pdb
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\SCDesignClient.Properties.Resources.resources
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\SCDesignClient.csproj.GenerateResource.Cache
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\SCDesignClient.exe
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\SCDesignClient.pdb
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\bin\Debug\Momo.Forms.dll
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\bin\Debug\Momo.Forms.pdb
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\SCDesignClient.csprojResolveAssemblyReference.cache
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\GDIPlusDemo.FormEx.resources
