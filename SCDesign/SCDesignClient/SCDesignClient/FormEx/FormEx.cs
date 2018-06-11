@@ -287,9 +287,9 @@ namespace GDIPlusDemo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mTabControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.mTabControl1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.mTabControl1.Controls.Add(this.dTabPage2);
             this.mTabControl1.Controls.Add(this.dTabPage3);
             this.mTabControl1.Controls.Add(this.dTabPage1);
-            this.mTabControl1.Controls.Add(this.dTabPage2);
             this.mTabControl1.GridLineColor = System.Drawing.Color.White;
             this.mTabControl1.Location = new System.Drawing.Point(719, 40);
             this.mTabControl1.Name = "mTabControl1";
@@ -385,6 +385,7 @@ namespace GDIPlusDemo
             this.ClientSize = new System.Drawing.Size(1055, 634);
             this.Controls.Add(this.mGroupBox1);
             this.Controls.Add(this.mTabControl1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
