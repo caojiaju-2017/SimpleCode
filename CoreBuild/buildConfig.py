@@ -39,6 +39,7 @@ for file in files:
         # 存储
         cfgFileName = os.path.join(serviceCfgSave, majorClassName + ".setting")
 
+        print (result)
         fileW = open(cfgFileName, 'w')
         fileW.write(result)
         fileW.close()

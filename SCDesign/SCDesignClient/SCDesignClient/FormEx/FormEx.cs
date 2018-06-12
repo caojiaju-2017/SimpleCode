@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.ComponentModel;
 using System.Drawing.Drawing2D;
+using System.IO;
+using SCDesignClient;
 
 namespace GDIPlusDemo
 {
@@ -26,6 +28,7 @@ namespace GDIPlusDemo
         private Momo.Forms.DTabPage dTabPage2;
         private Momo.Forms.DTabPage dTabPage3;
         private Momo.Forms.MGroupBox mGroupBox1;
+        private Momo.Forms.MLabel mLabel1;
 
         //系统按钮管理器
         private SystemButtonManager _systemButtonManager;
@@ -272,12 +275,14 @@ namespace GDIPlusDemo
 
         private void InitializeComponent()
         {
+            Momo.Forms.MBorder mBorder1 = new Momo.Forms.MBorder();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEx));
             this.mTabControl1 = new Momo.Forms.MTabControl();
-            this.dTabPage3 = new Momo.Forms.DTabPage();
             this.dTabPage1 = new Momo.Forms.DTabPage();
             this.dTabPage2 = new Momo.Forms.DTabPage();
+            this.dTabPage3 = new Momo.Forms.DTabPage();
             this.mGroupBox1 = new Momo.Forms.MGroupBox();
+            this.mLabel1 = new Momo.Forms.MLabel();
             this.mTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -287,39 +292,16 @@ namespace GDIPlusDemo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mTabControl1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.mTabControl1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.mTabControl1.Controls.Add(this.dTabPage2);
             this.mTabControl1.Controls.Add(this.dTabPage3);
             this.mTabControl1.Controls.Add(this.dTabPage1);
+            this.mTabControl1.Controls.Add(this.dTabPage2);
             this.mTabControl1.GridLineColor = System.Drawing.Color.White;
-            this.mTabControl1.Location = new System.Drawing.Point(719, 40);
+            this.mTabControl1.Location = new System.Drawing.Point(685, 40);
             this.mTabControl1.Name = "mTabControl1";
             this.mTabControl1.SelectedIndex = 2;
-            this.mTabControl1.Size = new System.Drawing.Size(324, 582);
+            this.mTabControl1.Size = new System.Drawing.Size(358, 415);
             this.mTabControl1.TabIndex = 0;
             this.mTabControl1.Text = "mTabControl1";
-            // 
-            // dTabPage3
-            // 
-            this.dTabPage3.BackColor = System.Drawing.Color.DarkKhaki;
-            this.dTabPage3.BackColorGradint = System.Drawing.Color.Empty;
-            this.dTabPage3.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.dTabPage3.BorderBottomWidth = 1;
-            this.dTabPage3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.dTabPage3.BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.dTabPage3.BorderLeftWidth = 1;
-            this.dTabPage3.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.dTabPage3.BorderRightWidth = 1;
-            this.dTabPage3.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Outset;
-            this.dTabPage3.BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.dTabPage3.BorderTopWidth = 1;
-            this.dTabPage3.BorderWidth = 1;
-            this.dTabPage3.LinearGradientMode = Momo.Forms.GradientMode.Horizontal;
-            this.dTabPage3.Location = new System.Drawing.Point(0, 40);
-            this.dTabPage3.Name = "dTabPage3";
-            this.dTabPage3.Padding = new System.Windows.Forms.Padding(0);
-            this.dTabPage3.Size = new System.Drawing.Size(324, 542);
-            this.dTabPage3.TabIndex = 3;
-            this.dTabPage3.Text = "控制";
             // 
             // dTabPage1
             // 
@@ -338,7 +320,7 @@ namespace GDIPlusDemo
             this.dTabPage1.Location = new System.Drawing.Point(0, 40);
             this.dTabPage1.Name = "dTabPage1";
             this.dTabPage1.Padding = new System.Windows.Forms.Padding(0);
-            this.dTabPage1.Size = new System.Drawing.Size(324, 542);
+            this.dTabPage1.Size = new System.Drawing.Size(358, 375);
             this.dTabPage1.TabIndex = 1;
             this.dTabPage1.Text = "基础";
             // 
@@ -360,9 +342,32 @@ namespace GDIPlusDemo
             this.dTabPage2.Location = new System.Drawing.Point(0, 40);
             this.dTabPage2.Name = "dTabPage2";
             this.dTabPage2.Padding = new System.Windows.Forms.Padding(0);
-            this.dTabPage2.Size = new System.Drawing.Size(324, 542);
+            this.dTabPage2.Size = new System.Drawing.Size(358, 375);
             this.dTabPage2.TabIndex = 2;
             this.dTabPage2.Text = "集合";
+            // 
+            // dTabPage3
+            // 
+            this.dTabPage3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.dTabPage3.BackColorGradint = System.Drawing.Color.Empty;
+            this.dTabPage3.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderBottomWidth = 1;
+            this.dTabPage3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderLeftWidth = 1;
+            this.dTabPage3.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderRightWidth = 1;
+            this.dTabPage3.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Outset;
+            this.dTabPage3.BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderTopWidth = 1;
+            this.dTabPage3.BorderWidth = 1;
+            this.dTabPage3.LinearGradientMode = Momo.Forms.GradientMode.Horizontal;
+            this.dTabPage3.Location = new System.Drawing.Point(0, 40);
+            this.dTabPage3.Name = "dTabPage3";
+            this.dTabPage3.Padding = new System.Windows.Forms.Padding(0);
+            this.dTabPage3.Size = new System.Drawing.Size(358, 375);
+            this.dTabPage3.TabIndex = 3;
+            this.dTabPage3.Text = "控制";
             // 
             // mGroupBox1
             // 
@@ -374,15 +379,38 @@ namespace GDIPlusDemo
             this.mGroupBox1.Location = new System.Drawing.Point(12, 40);
             this.mGroupBox1.Name = "mGroupBox1";
             this.mGroupBox1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.mGroupBox1.Size = new System.Drawing.Size(701, 582);
+            this.mGroupBox1.Size = new System.Drawing.Size(667, 582);
             this.mGroupBox1.TabIndex = 1;
             this.mGroupBox1.Text = "设计区";
             this.mGroupBox1.TitleColor = System.Drawing.Color.Black;
             this.mGroupBox1.TitleFont = new System.Drawing.Font("微软雅黑", 10F);
             // 
+            // mLabel1
+            // 
+            this.mLabel1.Align = Momo.Forms.TextAlignment.MiddleCenter;
+            this.mLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mLabel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.mLabel1.BackgroundColor = System.Drawing.SystemColors.Control;
+            mBorder1.Bottom = 0;
+            mBorder1.Color = System.Drawing.Color.Empty;
+            mBorder1.Left = 0;
+            mBorder1.Right = 0;
+            mBorder1.Top = 0;
+            mBorder1.Type = Momo.Forms.BorderType.Solid;
+            mBorder1.Width = 2;
+            this.mLabel1.Border = mBorder1;
+            this.mLabel1.Location = new System.Drawing.Point(685, 461);
+            this.mLabel1.Name = "mLabel1";
+            this.mLabel1.Radius = 0;
+            this.mLabel1.RadiusMode = Momo.Forms.RadiusMode.None;
+            this.mLabel1.Size = new System.Drawing.Size(358, 161);
+            this.mLabel1.TabIndex = 2;
+            this.mLabel1.Text = "mLabel1";
+            // 
             // FormEx
             // 
             this.ClientSize = new System.Drawing.Size(1055, 634);
+            this.Controls.Add(this.mLabel1);
             this.Controls.Add(this.mGroupBox1);
             this.Controls.Add(this.mTabControl1);
             this.DoubleBuffered = true;
@@ -391,6 +419,7 @@ namespace GDIPlusDemo
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEx";
             this.Text = "SCD助手";
+            this.Load += new System.EventHandler(this.FormEx_Load);
             this.mTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -546,5 +575,83 @@ namespace GDIPlusDemo
         }
 
         #endregion
+
+        private void FormEx_Load(object sender, EventArgs e)
+        {
+            // config path
+            string configPath = Path.Combine(Application.StartupPath, "ItemConfigs");
+
+            if (Directory.Exists(configPath))
+            {
+                Console.WriteLine("exist path");
+                initConfig(configPath);
+            }
+            else
+            {
+                Console.WriteLine("not exist path");
+            }
+        }
+        public string Read(string path)
+        {
+            string rtnValue = null;
+
+            try
+            {
+
+            
+            StreamReader sr = new StreamReader(path, Encoding.Default);
+            String line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                if (rtnValue == null)
+                {
+                    rtnValue = line.ToString();
+                }
+                else
+                {
+                    rtnValue = rtnValue + line.ToString();
+                }
+                
+            }
+                }
+            catch(Exception ex)
+            {
+
+            }
+            return rtnValue;
+        }
+        private void initConfig(string configPath)
+        {
+            try
+            {
+                DirectoryInfo dir = new DirectoryInfo(configPath);
+                //不是目录
+                if (dir == null) return;
+
+                FileSystemInfo[] files = dir.GetFileSystemInfos();
+                for (int i = 0; i < files.Length; i++)
+                {
+                    FileInfo file = files[i] as FileInfo;
+                    //是文件
+                    if (file != null && file.Extension.ToLower() == ".setting")
+                    {
+                        Console.WriteLine(file.FullName);
+
+                        // 读取文件内容
+                        string cfgValue = Read(file.FullName);
+                        var entity = cfgValue.FromJSON<ItemClass>();//Json转为实体对象
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+            catch (System.Exception err)
+            {
+                
+            }        
+            
+        }
     }
 }

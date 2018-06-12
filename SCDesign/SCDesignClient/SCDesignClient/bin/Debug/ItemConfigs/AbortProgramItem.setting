@@ -1,0 +1,22 @@
+{
+    "inputDict": {
+        "param1": {
+            "inputIndex": 0,
+            "maxValue": null,
+            "minValue": null,
+            "type": 0,
+            "value": null
+        },
+        "param2": {
+            "inputIndex": 2,
+            "maxValue": null,
+            "minValue": null,
+            "type": 0,
+            "value": null
+        }
+    },
+    "outPut": {
+        "type": 4,
+        "value": null
+    }
+}
