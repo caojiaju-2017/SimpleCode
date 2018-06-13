@@ -65,4 +65,3 @@ D:\Work\SimpleCode\SCDesign\MomoForm\Momo.Forms\obj\Debug\Momo.Forms.Properties.
 D:\Work\SimpleCode\SCDesign\MomoForm\Momo.Forms\obj\Debug\Momo.Forms.csproj.GenerateResource.Cache
 D:\Work\SimpleCode\SCDesign\MomoForm\Momo.Forms\obj\Debug\Momo.Forms.dll
 D:\Work\SimpleCode\SCDesign\MomoForm\Momo.Forms\obj\Debug\Momo.Forms.pdb
-D:\Work\SimpleCode\SCDesign\MomoForm\Momo.Forms\obj\Debug\Momo.Forms.csprojResolveAssemblyReference.cache
