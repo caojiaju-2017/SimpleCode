@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from CoreBuild.Platform.Params.InputType import *
+from Platform.Params.InputType import *
 
 class InputBase(object):
     '''

@@ -34,13 +34,8 @@ namespace GDIPlusDemo
         private SystemButtonManager _systemButtonManager;
 
         #endregion
-        private ItemControl itemControl1;
 
-        #region 配置项
         private List<ItemClass> m_itemLists = new List<ItemClass>();
-        private Control m_selectControl;
-        Point m_downPoint;
-        #endregion
 
         #region Constructor
 
@@ -284,16 +279,55 @@ namespace GDIPlusDemo
         {
             Momo.Forms.MBorder mBorder1 = new Momo.Forms.MBorder();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEx));
+            this.mLabel1 = new Momo.Forms.MLabel();
+            this.mGroupBox1 = new Momo.Forms.MGroupBox();
             this.mTabControl1 = new Momo.Forms.MTabControl();
             this.dTabPage3 = new Momo.Forms.DTabPage();
             this.dTabPage1 = new Momo.Forms.DTabPage();
             this.dTabPage2 = new Momo.Forms.DTabPage();
-            this.mGroupBox1 = new Momo.Forms.MGroupBox();
-            this.itemControl1 = new SCDesignClient.ItemControl();
-            this.mLabel1 = new Momo.Forms.MLabel();
             this.mTabControl1.SuspendLayout();
-            this.mGroupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // mLabel1
+            // 
+            this.mLabel1.Align = Momo.Forms.TextAlignment.MiddleCenter;
+            this.mLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mLabel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.mLabel1.BackgroundColor = System.Drawing.SystemColors.Control;
+            mBorder1.Bottom = 0;
+            mBorder1.Color = System.Drawing.Color.Empty;
+            mBorder1.Left = 0;
+            mBorder1.Right = 0;
+            mBorder1.Top = 0;
+            mBorder1.Type = Momo.Forms.BorderType.Solid;
+            mBorder1.Width = 2;
+            this.mLabel1.Border = mBorder1;
+            this.mLabel1.Location = new System.Drawing.Point(685, 461);
+            this.mLabel1.Name = "mLabel1";
+            this.mLabel1.Radius = 0;
+            this.mLabel1.RadiusMode = Momo.Forms.RadiusMode.None;
+            this.mLabel1.Size = new System.Drawing.Size(358, 161);
+            this.mLabel1.TabIndex = 2;
+            this.mLabel1.Text = "mLabel1";
+            // 
+            // mGroupBox1
+            // 
+            this.mGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mGroupBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.mGroupBox1.BorderColor = System.Drawing.Color.Empty;
+            this.mGroupBox1.Location = new System.Drawing.Point(12, 40);
+            this.mGroupBox1.Name = "mGroupBox1";
+            this.mGroupBox1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.mGroupBox1.Size = new System.Drawing.Size(667, 582);
+            this.mGroupBox1.TabIndex = 1;
+            this.mGroupBox1.Text = "设计区";
+            this.mGroupBox1.TitleColor = System.Drawing.Color.Black;
+            this.mGroupBox1.TitleFont = new System.Drawing.Font("微软雅黑", 10F);
+            this.mGroupBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mGroupBox1_MouseDown);
+            this.mGroupBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mGroupBox1_MouseMove);
+            this.mGroupBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mGroupBox1_MouseUp);
             // 
             // mTabControl1
             // 
@@ -314,17 +348,17 @@ namespace GDIPlusDemo
             // 
             // dTabPage3
             // 
-            this.dTabPage3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.dTabPage3.BackColor = System.Drawing.Color.White;
             this.dTabPage3.BackColorGradint = System.Drawing.Color.Empty;
-            this.dTabPage3.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderBottomColor = System.Drawing.Color.White;
             this.dTabPage3.BorderBottomWidth = 1;
-            this.dTabPage3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.dTabPage3.BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderColor = System.Drawing.Color.White;
+            this.dTabPage3.BorderLeftColor = System.Drawing.Color.White;
             this.dTabPage3.BorderLeftWidth = 1;
-            this.dTabPage3.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderRightColor = System.Drawing.Color.White;
             this.dTabPage3.BorderRightWidth = 1;
-            this.dTabPage3.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Outset;
-            this.dTabPage3.BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderStyle = System.Windows.Forms.ButtonBorderStyle.None;
+            this.dTabPage3.BorderTopColor = System.Drawing.Color.White;
             this.dTabPage3.BorderTopWidth = 1;
             this.dTabPage3.BorderWidth = 1;
             this.dTabPage3.LinearGradientMode = Momo.Forms.GradientMode.Horizontal;
@@ -378,57 +412,6 @@ namespace GDIPlusDemo
             this.dTabPage2.TabIndex = 2;
             this.dTabPage2.Text = "集合";
             // 
-            // mGroupBox1
-            // 
-            this.mGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mGroupBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.mGroupBox1.BorderColor = System.Drawing.Color.Empty;
-            this.mGroupBox1.Controls.Add(this.itemControl1);
-            this.mGroupBox1.Location = new System.Drawing.Point(12, 40);
-            this.mGroupBox1.Name = "mGroupBox1";
-            this.mGroupBox1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.mGroupBox1.Size = new System.Drawing.Size(667, 582);
-            this.mGroupBox1.TabIndex = 1;
-            this.mGroupBox1.Text = "设计区";
-            this.mGroupBox1.TitleColor = System.Drawing.Color.Black;
-            this.mGroupBox1.TitleFont = new System.Drawing.Font("微软雅黑", 10F);
-            this.mGroupBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mGroupBox1_MouseDown);
-            this.mGroupBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mGroupBox1_MouseMove);
-            this.mGroupBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mGroupBox1_MouseUp);
-            // 
-            // itemControl1
-            // 
-            this.itemControl1.BackColor = System.Drawing.Color.Black;
-            this.itemControl1.Location = new System.Drawing.Point(308, 153);
-            this.itemControl1.Name = "itemControl1";
-            this.itemControl1.Size = new System.Drawing.Size(150, 150);
-            this.itemControl1.TabIndex = 0;
-            //this.itemControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.itemControl1_MouseDown);
-            // 
-            // mLabel1
-            // 
-            this.mLabel1.Align = Momo.Forms.TextAlignment.MiddleCenter;
-            this.mLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mLabel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.mLabel1.BackgroundColor = System.Drawing.SystemColors.Control;
-            mBorder1.Bottom = 0;
-            mBorder1.Color = System.Drawing.Color.Empty;
-            mBorder1.Left = 0;
-            mBorder1.Right = 0;
-            mBorder1.Top = 0;
-            mBorder1.Type = Momo.Forms.BorderType.Solid;
-            mBorder1.Width = 2;
-            this.mLabel1.Border = mBorder1;
-            this.mLabel1.Location = new System.Drawing.Point(685, 461);
-            this.mLabel1.Name = "mLabel1";
-            this.mLabel1.Radius = 0;
-            this.mLabel1.RadiusMode = Momo.Forms.RadiusMode.None;
-            this.mLabel1.Size = new System.Drawing.Size(358, 161);
-            this.mLabel1.TabIndex = 2;
-            this.mLabel1.Text = "mLabel1";
-            // 
             // FormEx
             // 
             this.ClientSize = new System.Drawing.Size(1055, 634);
@@ -443,7 +426,6 @@ namespace GDIPlusDemo
             this.Text = "SCD助手";
             this.Load += new System.EventHandler(this.FormEx_Load);
             this.mTabControl1.ResumeLayout(false);
-            this.mGroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -620,15 +602,21 @@ namespace GDIPlusDemo
         private void createItems()
         {
             // 计算每个item 尺寸
-            int ctrlWd = mTabControl1.Width;
+            int ctrlParentWd = mTabControl1.Width;
 
             
-            int eachCtrlWd = (int)((ctrlWd / 4.0) *0.8);
+            int eachCtrlWd = (int)((ctrlParentWd / 6.0) *0.8);
 
             //MessageBox.Show(eachCtrlWd.ToString());
             for (int index = 0 ; index < m_itemLists.Count ; index++)
             {
+                ItemClass ctrlWd = m_itemLists[index];
+                ctrlWd.location = new List<int> { (int)(eachCtrlWd * 0.15), (int)(eachCtrlWd * 0.15 )};
+                ctrlWd.size = new List<int> { (int)(eachCtrlWd * 0.75), (int)(eachCtrlWd * 0.75) };
 
+                ItemControl ic = new ItemControl(ctrlWd);
+                ic.Location = ctrlWd.MyLocation();
+                dTabPage3.Controls.Add(ic);
             }
         }
         public string Read(string path)
@@ -656,7 +644,7 @@ namespace GDIPlusDemo
                 }
             catch(Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
             return rtnValue;
         }
@@ -691,59 +679,25 @@ namespace GDIPlusDemo
             }
             catch (System.Exception err)
             {
-                
+                Console.WriteLine(err.Message);
             }        
             
         }
 
+        private void mGroupBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+           // Console.WriteLine("FormEx-MouseDown");
+        }
+
         private void mGroupBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            //Console.WriteLine("mGroupBox1_MouseMove");
-            if (m_selectControl == null)
-            {
-                return;
-            }
-
-            Control currentCtrl = sender as Control;
-
-            Point curPoint = currentCtrl.PointToScreen(e.Location);
-
-            curPoint = mGroupBox1.PointToClient(curPoint);
-
-            int offsetX = curPoint.X - m_downPoint.X;
-            int offsetY = curPoint.Y - m_downPoint.Y;
-
-            m_downPoint = curPoint;
-
-            m_selectControl.Location = new Point(m_selectControl.Location.X + offsetX, m_selectControl.Location.Y + offsetY);
-
-            this.Refresh();
+            //Console.WriteLine("FormEx-MouseMove");
         }
 
         private void mGroupBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            Console.WriteLine("mGroupBox1_MouseUp");
-            m_selectControl = null;
+           // Console.WriteLine("FormEx-MouseUp");
         }
 
-        private void mGroupBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            Console.WriteLine("mGroupBox1_MouseDown");
-            Control currentCtrl = sender as Control;
-
-            // 记录鼠标按下位置
-            m_downPoint = currentCtrl.PointToScreen(e.Location);
-
-            m_downPoint = mGroupBox1.PointToClient(m_downPoint);
-
-            if (currentCtrl is ItemControl)
-            {
-                m_selectControl = currentCtrl;
-            }
-            else
-            {
-                m_selectControl = null;
-            }
-        }
     }
 }

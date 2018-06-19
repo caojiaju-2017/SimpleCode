@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from CoreBuild.ServiceItems.AbortProgram.AbortProgramItem import *
+# from CoreBuild.ServiceItems.AbortProgram.AbortProgramItem import *
+
+from ServiceItems.AbortProgram.AbortProgramItem import *
 import glob,os
 
 currentPath = os.getcwd()
@@ -33,7 +35,7 @@ for file in files:
 
         excuteStr = "%s()" %  majorClassName
         currentItemInstance = eval(excuteStr)
-
+        currentItemInstance.checkResult()
         result = currentItemInstance.getCfgJson()
 
         # 存储
