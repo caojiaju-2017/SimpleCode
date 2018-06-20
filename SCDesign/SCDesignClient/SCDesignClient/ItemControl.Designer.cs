@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.DoubleBuffered = true;
             this.Name = "ItemControl";
-            //this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ItemControl_MouseDown);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ItemControl_MouseClick);
             this.MouseEnter += new System.EventHandler(this.ItemControl_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ItemControl_MouseLeave);
             this.ResumeLayout(false);

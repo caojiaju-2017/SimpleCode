@@ -615,6 +615,7 @@ namespace GDIPlusDemo
                 ctrlWd.size = new List<int> { (int)(eachCtrlWd * 0.75), (int)(eachCtrlWd * 0.75) };
 
                 ItemControl ic = new ItemControl(ctrlWd);
+                ic.SetActive(true);
                 ic.Location = ctrlWd.MyLocation();
                 dTabPage3.Controls.Add(ic);
             }
