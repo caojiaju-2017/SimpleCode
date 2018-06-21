@@ -348,17 +348,18 @@ namespace GDIPlusDemo
             // 
             // dTabPage3
             // 
-            this.dTabPage3.BackColor = System.Drawing.Color.White;
-            this.dTabPage3.BackColorGradint = System.Drawing.Color.Empty;
-            this.dTabPage3.BorderBottomColor = System.Drawing.Color.White;
+            this.dTabPage3.AutoScroll = true;
+            this.dTabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BackColorGradint = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.dTabPage3.BorderBottomWidth = 1;
-            this.dTabPage3.BorderColor = System.Drawing.Color.White;
-            this.dTabPage3.BorderLeftColor = System.Drawing.Color.White;
+            this.dTabPage3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.dTabPage3.BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.dTabPage3.BorderLeftWidth = 1;
-            this.dTabPage3.BorderRightColor = System.Drawing.Color.White;
+            this.dTabPage3.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.dTabPage3.BorderRightWidth = 1;
             this.dTabPage3.BorderStyle = System.Windows.Forms.ButtonBorderStyle.None;
-            this.dTabPage3.BorderTopColor = System.Drawing.Color.White;
+            this.dTabPage3.BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.dTabPage3.BorderTopWidth = 1;
             this.dTabPage3.BorderWidth = 1;
             this.dTabPage3.LinearGradientMode = Momo.Forms.GradientMode.Horizontal;
@@ -603,21 +604,49 @@ namespace GDIPlusDemo
         {
             // 计算每个item 尺寸
             int ctrlParentWd = mTabControl1.Width;
-
-            
-            int eachCtrlWd = (int)((ctrlParentWd / 6.0) *0.8);
+            int rowSize = 3;
+            double rate = 0.7;
+            int actualWd = (int)(ctrlParentWd / rowSize*1.0);
+            int eachCtrlWd = (int)((ctrlParentWd / rowSize * 1.0) * rate);
 
             //MessageBox.Show(eachCtrlWd.ToString());
+            int sepWd = (int)((ctrlParentWd / rowSize) * (1-rate)/2);
             for (int index = 0 ; index < m_itemLists.Count ; index++)
             {
+                int tmpColIndex = index % rowSize;
+                int tmpRowIndex = index / rowSize;
+
                 ItemClass ctrlWd = m_itemLists[index];
-                ctrlWd.location = new List<int> { (int)(eachCtrlWd * 0.15), (int)(eachCtrlWd * 0.15 )};
-                ctrlWd.size = new List<int> { (int)(eachCtrlWd * 0.75), (int)(eachCtrlWd * 0.75) };
+                ctrlWd.location = new List<int> { (int)(eachCtrlWd * (1 - rate)) + tmpColIndex * (actualWd), (int)(eachCtrlWd * (1 - rate)) + tmpRowIndex * (actualWd) };
+                ctrlWd.size = new List<int> { (int)(eachCtrlWd * rate), (int)(eachCtrlWd * rate) };
 
                 ItemControl ic = new ItemControl(ctrlWd);
-                ic.SetActive(true);
+                //ic.SetActive(true);
                 ic.Location = ctrlWd.MyLocation();
+                ic.Name = "test" + index;
+
+                ic.FocusChangeEvent += ic_FocusChangeEvent;
                 dTabPage3.Controls.Add(ic);
+            }
+        }
+
+        private void ic_FocusChangeEvent(object sender, ActiveEventArgs e)
+        {
+            ItemControl ic = sender as ItemControl;
+            if (ic == null)
+            {
+                return;
+            }
+
+            for (int index = 0 ; index < dTabPage3.Controls.Count ; index ++)
+            {
+                ItemControl oneCtrl = dTabPage3.Controls[index] as ItemControl;
+
+                if (oneCtrl.Name == ic.Name)
+                {
+                    continue;
+                }
+                oneCtrl.SetActive(false);
             }
         }
         public string Read(string path)

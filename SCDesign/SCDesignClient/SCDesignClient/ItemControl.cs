@@ -22,6 +22,10 @@ namespace SCDesignClient
         Color unselColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
         #endregion
 
+        public delegate void ActiveChangeEventHandler(object sender, ActiveEventArgs e);
+        //用event 关键字声明事件对象
+        public event ActiveChangeEventHandler FocusChangeEvent;
+
         public void SetActive(Boolean flag)
         {
             if (flag != this.isActive)
@@ -296,6 +300,12 @@ namespace SCDesignClient
         private void ItemControl_MouseClick(object sender, MouseEventArgs e)
         {
             this.SetActive(!this.isActive);
+
+            if (this.isActive)
+            {
+                ActiveEventArgs args = new ActiveEventArgs();
+                FocusChangeEvent(this, args);
+            }
         }
 
         //private void ItemControl_MouseDown(object sender, MouseEventArgs e)
