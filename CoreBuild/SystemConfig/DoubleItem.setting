@@ -1,0 +1,34 @@
+{
+    "inputDict": {
+        "param1": {
+            "inputIndex": 0,
+            "maxValue": null,
+            "minValue": null,
+            "type": 0,
+            "value": null
+        },
+        "param2": {
+            "inputIndex": 2,
+            "maxValue": null,
+            "minValue": null,
+            "type": 0,
+            "value": null
+        }
+    },
+    "iteminfo": "\u6a21\u5757\u5b9e\u73b0\u4e86\u5173\u95ed\u67d0\u7a0b\u5e8f\u80fd\u529b",
+    "itemname": "\u5c0f\u6570",
+    "itemtype": 903,
+    "location": [
+        0,
+        0
+    ],
+    "outPut": {
+        "type": 4,
+        "value": null
+    },
+    "shapetype": 200003,
+    "size": [
+        0,
+        0
+    ]
+}

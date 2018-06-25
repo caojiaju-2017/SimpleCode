@@ -9,10 +9,10 @@ class AbortProgramItem(ItemBase):
     def __init__(self):
         super(AbortProgramItem, self).__init__()
 
-        self.itemtype = ItemType.Control
-        self.shapetype = ItemShap.Circle
-        self.itemname = "Close Program"
-        self.iteminfo = "Python 类可以定义专用方法,专用方法是在特殊情况下或当使用特别语法时由 Python 替你调用的，而不是在代码中直接调用（象普通的方法那样）"
+        self.itemtype = ItemType.Module
+        self.shapetype = ImageShape.Image100001
+        self.itemname = "关闭程序"
+        self.iteminfo = "模块实现了关闭某程序能力"
         self.buildConfig()
         pass
 

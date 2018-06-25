@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActiveEventArgs.cs" />
+    <Compile Include="DesignerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DesignerPanel.Designer.cs">
+      <DependentUpon>DesignerPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEx\Enums\ButtonStatus.cs" />
     <Compile Include="FormEx\Enums\ClassStyle.cs" />
     <Compile Include="FormEx\Enums\MouseOperate.cs" />
@@ -74,6 +80,9 @@
     <Compile Include="JsonExtension.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DesignerPanel.resx">
+      <DependentUpon>DesignerPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEx\FormEx.resx">
       <DependentUpon>FormEx.cs</DependentUpon>
     </EmbeddedResource>

@@ -9,5 +9,6 @@ namespace SCDesignClient
     public class ActiveEventArgs
     {
         public int _tag;
+        public Boolean State = false;
     }
 }

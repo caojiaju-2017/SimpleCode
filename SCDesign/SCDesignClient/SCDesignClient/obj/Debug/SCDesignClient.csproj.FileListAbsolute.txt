@@ -10,3 +10,4 @@ D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\bin\Debug\Momo.Forms.p
 D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\SCDesignClient.csprojResolveAssemblyReference.cache
 D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\GDIPlusDemo.FormEx.resources
 D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\SCDesignClient.ItemControl.resources
+D:\Work\SimpleCode\SCDesign\SCDesignClient\SCDesignClient\obj\Debug\SCDesignClient.DesignerPanel.resources

@@ -39,6 +39,7 @@
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ItemControl_MouseClick);
             this.MouseEnter += new System.EventHandler(this.ItemControl_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ItemControl_MouseLeave);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ItemControl_MouseUp);
             this.ResumeLayout(false);
 
         }
